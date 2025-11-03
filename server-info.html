@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="minecraft_title.png" sizes="96x96" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RavenMC - Server Information</title>
+    <style>
+        :root {
+            --primary: #6a0dad;  /* Deep purple */
+            --primary-light: #9c4dcc;
+            --primary-dark: #4a0080;
+            --accent: #a64dff;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #f0f0f0;
+            --gray: #303030;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%236a0dad' fill-opacity='0.1' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/svg%3E");
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--darker);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--light);
+        }
+        
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        .menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .menu a:hover {
+            color: var(--accent);
+        }
+        
+        .menu a:hover::after {
+            width: 100%;
+        }
+        
+        .join-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .join-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background-color: var(--darker);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("/api/placeholder/1200/300") center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: var(--primary-light);
+        }
+        
+        .page-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--primary-light);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .info-box {
+            background-color: var(--gray);
+            border-radius: 10px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info-box-header {
+            padding: 15px 20px;
+            background-color: var(--primary-dark);
+            border-bottom: 1px solid var(--primary);
+        }
+        
+        .info-box-title {
+            font-size: 1.5rem;
+            color: var(--light);
+        }
+        
+        .info-box-content {
+            padding: 25px;
+        }
+        
+        .server-address {
+            background-color: var(--darker);
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin: 15px 0;
+            border: 1px dashed var(--primary-light);
+        }
+        
+        .copy-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+            font-weight: bold;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--darker);
+        }
+        
+        .specs-table th {
+            background-color: var(--darker);
+            color: var(--primary-light);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .rule-card {
+            background-color: var(--darker);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .rule-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-light);
+        }
+        
+        .rule-desc {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .staff-card {
+            background-color: var(--gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .staff-header {
+            background-color: var(--primary-dark);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .staff-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid var(--primary-light);
+        }
+        
+        .staff-info {
+            flex: 1;
+        }
+        
+        .staff-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .staff-role {
+            font-size: 0.9rem;
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+        
+        .staff-content {
+            padding: 20px;
+        }
+        
+        .staff-bio {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: var(--primary-dark);
+            color: var(--light);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+        }
+        
+        .faq-question {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+        
+        .faq-answer {
+            line-height: 1.7;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-dark);
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--light);
+            opacity: 0.9;
+        }
+        
+        /* Discord Button */
+        .discord-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #5865F2; /* Discord blue */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 15px 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .discord-btn:hover {
+            background-color: #4752C4;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .discord-btn svg {
+            margin-right: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--gray);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .footer-logo img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo p {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-light);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--gray);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div style="width: 50px; height: 50px;">
+                        <img src="minecraft_title.png" alt="Logo">
+                    </div>
+                    <h1>Raven<span>MC</span></h1>
+                </div>
+                <div class="menu">
+                    <a href="index.html">Home</a>
+                    <a href="server-info.html" class="active">Server Info</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="leveling.html">Leveling</a>
+                    <a href="community.html">Community</a>
+                </div>
+                <button class="join-btn">JOIN SERVER</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Server Information</h1>
+            <p class="page-subtitle">Everything you need to know about RavenMC, from connecting to rules and staff details.</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="info-box">
+                <div class="info-box-header">
+                    <h2 class="info-box-title">Connection Details</h2>
+                </div>
+                <div class="info-box-content">
+                    <p>To join RavenMC, you'll need Minecraft Java Edition version 1.20 or higher. Use the following server address to connect:</p>
+                    <div class="server-address">play.RavenMC.com</div>
+                    <button class="copy-btn">Copy</button>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Connection Steps:</h3>
+                    <ol style="margin-left: 20px; line-height: 1.6;">
+                        <li>Open Minecraft Java Edition</li>
+                        <li>Click on "Multiplayer"</li>
+                        <li>Click "Add Server"</li>
+                        <li>Enter "RavenMC" as the server name</li>
+                        <li>Enter "play.RavenMC.com" as the server address</li>
+                        <li>Click "Done" and then select the server to join</li>
+                    </ol>
+                    
+                    <div style="background-color: var(--primary-dark); padding: 15px; border-radius: 5px; margin-top: 20px;">
+                        <p style="font-weight: bold; margin-bottom: 5px;">First time joining?</p>
+                        <p>When you first join RavenMC, you'll spawn in our welcome hub. Follow the tutorial to learn about our unique raven-themed leveling system and how to get started.</p>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 25px;">
+                        <a href="https://discord.gg/XNmwKutUeJ" target="_blank" class="discord-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" />
+                            </svg>
+                            JOIN OUR DISCORD
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Server Specifications</h2>
+            <div class="info-box">
+                <div class="info-box-content">
+                    <p>RavenMC runs on premium hardware with optimized configurations to ensure a smooth gameplay experience for all players.</p>
+                    
+                    <table class="specs-table">
+                        <tr>
+                            <th>Feature</th>
+                            <th>Specification</th>
+                        </tr>
+                        <tr>
+                            <td>Minecraft Version</td>
+                            <td>Java Edition 1.20+</td>
+                        </tr>
+                        <tr>
+                            <td>Server Type</td>
+                            <td>Paper MC (Optimized)</td>
+                        </tr>
+                        <tr>
+                            <td>Hardware</td>
+                            <td>Dedicated Server (32GB RAM, Ryzen 9 5900X)</td>
+                        </tr>
+                        <tr>
+                            <td>Player Slots</td>
+                            <td>200 concurrent players</td>
+                        </tr>
+                        <tr>
+                            <td>Uptime</td>
+                            <td>99.9% (24/7 operation with scheduled maintenance)</td>
+                        </tr>
+                        <tr>
+                            <td>Data Center</td>
+                            <td>North America (East Coast) with global routing</td>
+                        </tr>
+                        <tr>
+                            <td>Anti-Lag</td>
+                            <td>Advanced optimizations, view distance management</td>
+                        </tr>
+                        <tr>
+                            <td>Backups</td>
+                            <td>Hourly backups with 30-day retention</td>
+                        </tr>
+                    </table>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Custom Features:</h3>
+                    <ul class="feature-list">
+                        <li><strong>Raven Leveling System:</strong> Our custom-built progression system featuring companion ravens that grow alongside you</li>
+                        <li><strong>Custom-Generated World:</strong> Unique terrain with special biomes and structures</li>
+                        <li><strong>Economy System:</strong> Player-driven economy with shops and trading</li>
+                        <li><strong>Land Claiming:</strong> Protect your builds with our advanced claim system</li>
+                        <li><strong>Custom Enchantments:</strong> Discover and use unique enchantments exclusive to RavenMC</li>
+                        <li><strong>Player Warps:</strong> Set personal warps and visit other player's creations</li>
+                        <li><strong>Events System:</strong> Regular server events with special rewards</li>
+                        <li><strong>Discord Integration:</strong> Linked accounts with chat synchronization</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Server Rules</h2>
+            <div class="info-box">
+                <div class="info-box-content">
+                    <p>To maintain a positive and enjoyable environment for all players, we ask everyone to follow these rules:</p>
+                    
+                    <div class="rule-card">
+                        <h3 class="rule-title">1. Respect All Players</h3>
+                        <p class="rule-desc">Treat all players with respect. Harassment, discrimination, hate speech, and bullying are not tolerated. Keep chat appropriate and friendly.</p>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <h3 class="rule-title">2. No Griefing or Stealing</h3>
+                        <p class="rule-desc">Respect other players' builds and property. Do not destroy, modify, or take items from other players without permission, even if their land is not claimed.</p>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <h3 class="rule-title">3. No Hacking or Exploits</h3>
+                        <p class="rule-desc">Using hacked clients, mods that give unfair advantages, or exploiting bugs to gain an edge is prohibited. Allowed mods include Optifine, minimaps, and cosmetic mods.</p>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <h3 class="rule-title">4. PvP Restrictions</h3>
+                        <p class="rule-desc">PvP is only allowed in designated areas or during events. Forced PvP, spawn camping, and combat logging are not permitted.</p>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <h3 class="rule-title">5. Keep Chat Family-Friendly</h3>
+                        <p class="rule-desc">Maintain appropriate language in all chat channels. Excessive swearing, adult content, and inappropriate discussions are not allowed.</p>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <h3 class="rule-title">6. No Spamming or Advertising</h3>
+                        <p class="rule-desc">Do not spam chat with repeated messages or excessive caps. Advertising other servers or unrelated content is prohibited.</p>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <h3 class="rule-title">7. Respect Server Performance</h3>
+                        <p class="rule-desc">Avoid building lag-inducing machines or contraptions that could negatively impact server performance for other players.</p>
+                    </div>
+                    
+                    <div style="background-color: var(--primary-dark); padding: 20px; border-radius: 8px; margin-top: 30px;">
+                        <h3 style="margin-bottom: 10px;">Rule Enforcement</h3>
+                        <p>Our moderation team enforces these rules with a strike system:</p>
+                        <ul style="margin-left: 20px; line-height: 1.6; margin-top: 10px;">
+                            <li><strong>First offense:</strong> Warning</li>
+                            <li><strong>Second offense:</strong> Temporary mute or kick</li>
+                            <li><strong>Third offense:</strong> Temporary ban (1-7 days)</li>
+                            <li><strong>Severe or repeated offenses:</strong> Permanent ban</li>
+                        </ul>
+                        <p style="margin-top: 10px;">Staff have final discretion on rule interpretation and enforcement.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Staff Team</h2>
+            <div class="staff-grid">
+                <!-- Realisticrave -->
+                <div class="staff-card">
+                    <div class="staff-header">
+                        <div class="staff-avatar">
+                            <img src="realisticrave-profile.png" alt="Hydra - EmeraldTornado12" width="60" height="60" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="staff-info">
+                            <h3 class="staff-name">Realisticrave</h3>
+                            <p class="staff-role">Owner & Developer</p>
+                        </div>
+                    </div>
+                    <div class="staff-content">
+                        <p class="staff-bio">Founder of RavenMC and lead developer of our custom raven leveling system. Has been running Minecraft servers since 2012.</p>
+                        <span class="badge">Custom Plugins</span>
+                        <span class="badge">World Design</span>
+                        <span class="badge">System Administration</span>
+                    </div>
+                </div>
+                
+                <!-- Richie -->
+                <div class="staff-card">
+                    <div class="staff-header">
+                        <div class="staff-avatar">
+                            <img src="richie-profile.png" alt="Hydra - EmeraldTornado12" width="60" height="60" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="staff-info">
+                            <h3 class="staff-name">Richie</h3>
+                            <p class="staff-role">Admin & Community Manager</p>
+                        </div>
+                    </div>
+                    <div class="staff-content">
+                        <p class="staff-bio">Responsible for community events, discord management, and player support. Known for creating elaborate in-game events.</p>
+                        <span class="badge">Events</span>
+                        <span class="badge">Player Support</span>
+                        <span class="badge">Discord Management</span>
+                    </div>
+                </div>
+                
+                <!-- Hydra - EmeraldTornado12 -->
+                <div class="staff-card">
+                    <div class="staff-header">
+                        <div class="staff-avatar">
+                            <img src="hydra-profile.png" alt="Hydra - EmeraldTornado12" width="60" height="60" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="staff-info">
+                            <h3 class="staff-name">Hydra - EmeraldTornado12</h3>
+                            <p class="staff-role">Head Moderator</p>
+                        </div>
+                    </div>
+                    <div class="staff-content">
+                        <p class="staff-bio">Leads our moderation team to ensure server rules are followed and players have a positive experience. Available during EU/NA timezones.</p>
+                        <span class="badge">Rule Enforcement</span>
+                        <span class="badge">Conflict Resolution</span>
+                        <span class="badge">Player Support</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="info-box">
+                <div class="info-box-content">
+                    <div class="faq-item">
+                        <h3 class="faq-question">How do I start leveling up my Raven?</h3>
+                        <div class="faq-answer">
+                            <p>When you first join, you'll receive a Raven Egg. Right-click it to hatch your companion. Complete daily quests, mine resources, defeat enemies, and build structures to gain XP. As you level up, your raven will evolve and gain new abilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Can I claim land to protect my builds?</h3>
+                        <div class="faq-answer">
+                            <p>Yes! Use the /claim command to start protecting your land. New players receive 2,000 claim blocks initially, and you earn more as you play. You can add trusted players to your claim with /trust [playername].</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">How does the economy work?</h3>
+                        <div class="faq-answer">
+                            <p>Our economy is based on Raven Tokens. You earn tokens by completing quests, participating in events, trading with other players, and selling items at the community marketplace. Use tokens to purchase special items, claim more land, or upgrade your raven abilities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Is there a teleport system?</h3>
+                        <div class="faq-answer">
+                            <p>Yes, we have several teleport options:
+                            <br>- /spawn - Return to the server spawn
+                            <br>- /home - Teleport to your set home points (unlock more as you level up)
+                            <br>- /warp - Visit server warps like shopping district, events, and more
+                            <br>- /tpa - Request to teleport to another player</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">What makes RavenMC different from other servers?</h3>
+                        <div class="faq-answer">
+                            <p>RavenMC offers a unique Raven-themed leveling experience you won't find elsewhere. Your companion raven grows with you, gaining abilities that help with mining, combat, exploration, and more. We also offer custom biomes, structures, enchantments, and regular community events designed around our raven theme.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">Do I need to use Discord to play?</h3>
+                        <div class="faq-answer">
+                            <p>While not required, joining our Discord server is highly recommended. We announce events, updates, and maintenance there, and it's the best place to get support if you need help. Plus, linking your Minecraft account to Discord gives you additional perks!</p>
+                            <p><a href="https://discord.gg/XNmwKutUeJ" target="_blank" style="color: var(--primary-light); font-weight: bold;">Join our Discord server</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question">How often do you reset the map?</h3>
+                        <div class="faq-answer">
+                            <p>We aim to keep the main world running for 6-8 months before considering a reset. When resets happen, we provide ample notice and allow players to download their builds. Player progress, including raven levels and economy, carries over to new maps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="info-box-header">
+                    <h2 class="info-box-title">Server Maintenance</h2>
+                </div>
+                <div class="info-box-content">
+                    <p>Our server undergoes regular maintenance to ensure the best possible experience for all players. Below is information about our maintenance schedule and tools.</p>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Maintenance Schedule</h3>
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li><strong>Regular Restarts:</strong> Daily at 3:00 AM EST (automated, 1-2 minute downtime)</li>
+                        <li><strong>Weekly Maintenance:</strong> Tuesdays, 2:00-3:00 AM EST</li>
+                        <li><strong>Major Updates:</strong> Announced at least 48 hours in advance via Discord</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Backup Policy</h3>
+                    <p>We maintain several layers of backup protection for the server:</p>
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li><strong>Hourly Incremental Backups:</strong> Retained for 24 hours</li>
+                        <li><strong>Daily Full Backups:</strong> Retained for 7 days</li>
+                        <li><strong>Weekly Full Backups:</strong> Retained for 30 days</li>
+                        <li><strong>Pre-update Full Backups:</strong> Taken before any major update</li>
+                    </ul>
+                    
+                    <div style="background-color: var(--primary-dark); padding: 15px; border-radius: 5px; margin-top: 20px;">
+                        <p style="font-weight: bold; margin-bottom: 5px;">Server Status Updates</p>
+                        <p>For real-time server status and maintenance announcements, join our <a href="https://discord.gg/XNmwKutUeJ" target="_blank" style="color: white; text-decoration: underline;">Discord Server</a>.</p>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Maintenance Tools</h3>
+                    <p>Our server uses several custom tools for maintenance and management:</p>
+                    <ul style="margin-left: 20px; line-height: 1.6;">
+                        <li><strong>Name Update Script:</strong> <a href="rename-server.js" download>Download</a> - Used to update server branding</li>
+                        <li><strong>Performance Monitor:</strong> Real-time TPS and memory usage monitoring</li>
+                        <li><strong>Auto-Restart:</strong> Automatic server restarts if TPS drops below threshold</li>
+                    </ul>
+                    
+                    <div style="background-color: var(--gray); padding: 15px; border-radius: 5px; margin-top: 20px; font-family: monospace; font-size: 0.9rem;">
+                        <p style="font-weight: bold; margin-bottom: 10px;">Recent Maintenance Log:</p>
+                        <div style="color: #aaa; line-height: 1.5;">
+                            [2025-04-10] Server updated to Minecraft 1.20.1<br>
+                            [2025-04-02] Performance optimizations applied<br>
+                            [2025-03-27] Added new custom enchantments<br>
+                            [2025-03-15] Server rebranded to RavenMC
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Join the Adventure?</h2>
+            <p class="cta-subtitle">Become part of our growing community, level up your raven, and build incredible creations in our custom world.</p>
+            <div>
+                <button class="join-btn" style="font-size: 1.2rem; padding: 15px 30px;">JOIN RavenMC NOW</button>
+                <a href="https://discord.gg/XNmwKutUeJ" target="_blank" class="discord-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" />
+                    </svg>
+                    JOIN DISCORD
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div style="width: 60px; height: 60px;">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" fill="#4a0080" stroke="#9c4dcc" stroke-width="2" />
+                            <path d="M30 40C30 35 35 25 50 25C65 25 70 35 70 40C70 50 60 55 50 55C40 55 30 50 30 40Z" fill="#9c4dcc" />
+                            <circle cx="40" cy="35" r="5" fill="#121212" />
+                            <circle cx="60" cy="35" r="5" fill="#121212" />
+                            <path d="M40 65C45 75 55 75 60 65" stroke="#9c4dcc" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <h3 style="margin: 15px 0;">RavenMC</h3>
+                    <p>The ultimate Minecraft experience with unique raven-themed leveling system. Join our community and embark on an epic adventure!</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/XNmwKutUeJ" target="_blank" aria-label="Discord">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1a10.66 10.66 0 0 1-9-4.53s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.218-1.79.465-2.428.247-.67.642-1.276 1.153-1.772a4.91 4.91 0 0 1 1.772-1.153c.637-.247 1.363-.415 2.428-.465C8.944 2.013 9.283 2 12 2z" fill="white"/>
+                                <path d="M12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-10.22a6.22 6.22 0 1 0 0 12.44 6.22 6.22 0 0 0 0-12.44zm7.77-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="server-info.html">Server Info</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="leveling.html">Leveling System</a></li>
+                        <li><a href="rules.html">Rules</a></li>
+                        <li><a href="staff.html">Staff</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul>
+                        <li><a href="#">Knowledge Base</a></li>
+                        <li><a href="#">Player Guides</a></li>
+                        <li><a href="#">Raven Skills</a></li>
+                        <li><a href="#">Server Map</a></li>
+                        <li><a href="#">Discord Bot</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="#">Bug Reports</a></li>
+                        <li><a href="#">Donate</a></li>
+                        <li><a href="#">Apply for Staff</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 RavenMC. All rights reserved. Not affiliated with Mojang AB.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to handle the copy button functionality
+        document.querySelector('.copy-btn').addEventListener('click', function() {
+            const serverAddress = document.querySelector('.server-address').textContent;
+            navigator.clipboard.writeText(serverAddress).then(function() {
+                const originalText = document.querySelector('.copy-btn').textContent;
+                document.querySelector('.copy-btn').textContent = 'Copied!';
+                setTimeout(function() {
+                    document.querySelector('.copy-btn').textContent = originalText;
+                }, 2000);
+            });
+        });
+    </script>
+    <script src="discord-integration.js"></script>
+    <script src="server-status.js"></script>
+</body>
+</html>

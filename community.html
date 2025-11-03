@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="minecraft_title.png" sizes="96x96" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RavenMC - Community</title>
+    <style>
+        :root {
+            --primary: #6a0dad;  /* Deep purple */
+            --primary-light: #9c4dcc;
+            --primary-dark: #4a0080;
+            --accent: #a64dff;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #f0f0f0;
+            --gray: #303030;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%236a0dad' fill-opacity='0.1' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/svg%3E");
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--darker);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--light);
+        }
+        
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        .menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .menu a:hover {
+            color: var(--accent);
+        }
+        
+        .menu a:hover::after {
+            width: 100%;
+        }
+        
+        .join-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .join-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background-color: var(--darker);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("/api/placeholder/1200/300") center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: var(--primary-light);
+        }
+        
+        .page-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--primary-light);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .info-box {
+            background-color: var(--gray);
+            border-radius: 10px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info-box-header {
+            padding: 15px 20px;
+            background-color: var(--primary-dark);
+            border-bottom: 1px solid var(--primary);
+        }
+        
+        .info-box-title {
+            font-size: 1.5rem;
+            color: var(--light);
+        }
+        
+        .info-box-content {
+            padding: 25px;
+        }
+        
+        /* Discord Section */
+        .discord-section {
+            position: relative;
+            margin-bottom: 60px;
+        }
+        
+        .discord-container {
+            background-color: #5865F2; /* Discord blue */
+            border-radius: 10px;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .discord-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/svg%3E");
+            z-index: 0;
+        }
+        
+        .discord-content {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .discord-title {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .discord-title svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .discord-description {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .discord-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .discord-features li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+            color: white;
+        }
+        
+        .discord-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .discord-stats {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-flex;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .discord-stat {
+            text-align: center;
+        }
+        
+        .discord-stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .discord-stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .discord-widget {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .discord-widget-header {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .discord-widget-title {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        
+        .discord-widget-content {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        
+        .discord-member {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .discord-member:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .discord-member-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .discord-member-info {
+            flex: 1;
+        }
+        
+        .discord-member-name {
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .discord-member-status {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .online-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #43b581;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        
+        .discord-join-btn {
+            background-color: white;
+            color: #5865F2;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .discord-join-btn:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Rules Section */
+        .rules-section {
+            margin-bottom: 60px;
+        }
+        
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .rule-card {
+            background-color: var(--gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .rule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .rule-number {
+            background-color: var(--primary-dark);
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .rule-content {
+            padding: 20px;
+        }
+        
+        .rule-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-light);
+        }
+        
+        .rule-desc {
+            line-height: 1.6;
+        }
+        
+        /* Events Section */
+        .events-section {
+            margin-bottom: 60px;
+        }
+        
+        .event-timeline {
+            position: relative;
+            margin-top: 50px;
+            padding-left: 30px;
+        }
+        
+        .event-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 4px;
+            width: 2px;
+            background-color: var(--primary-light);
+        }
+        
+        .event-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .event-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .event-date {
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            border: 2px solid var(--primary-light);
+        }
+        
+        .event-card {
+            background-color: var(--gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .event-header {
+            background-color: var(--primary-dark);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .event-title {
+            font-size: 1.3rem;
+            color: white;
+        }
+        
+        .event-time {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .event-content {
+            padding: 20px;
+        }
+        
+        .event-description {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .event-details {
+            background-color: var(--darker);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .event-detail {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .event-detail:last-child {
+            margin-bottom: 0;
+        }
+        
+        .event-detail-label {
+            min-width: 100px;
+            font-weight: bold;
+            color: var(--primary-light);
+        }
+        
+        .event-detail-value {
+            flex: 1;
+        }
+        
+        .event-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .event-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            flex: 1;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .event-btn:hover {
+            background-color: var(--primary-light);
+        }
+        
+        /* Community Projects */
+        .projects-section {
+            margin-bottom: 60px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .project-card {
+            background-color: var(--gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .project-image {
+            height: 180px;
+            background-color: var(--primary-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-status {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-light);
+        }
+        
+        .project-description {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--darker);
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Staff Team */
+        .staff-section {
+            margin-bottom: 60px;
+        }
+        
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .staff-card {
+            background-color: var(--gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .staff-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .staff-header {
+            background-color: var(--primary-dark);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .staff-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid var(--primary-light);
+            overflow: hidden;
+        }
+        
+        .staff-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .staff-info {
+            flex: 1;
+        }
+        
+        .staff-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .staff-role {
+            font-size: 0.9rem;
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+        
+        .staff-content {
+            padding: 20px;
+        }
+        
+        .staff-bio {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .staff-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .staff-badge {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--gray);
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .footer-logo img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo p {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-light);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--gray);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .discord-container {
+                flex-direction: column;
+            }
+            
+            .rules-grid,
+            .projects-grid,
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div style="width: 50px; height: 50px;">
+                        <img src="minecraft_title.png" alt="Logo">
+                    </div>
+                    <h1>Raven<span>MC</span></h1>
+                </div>
+                <div class="menu">
+                    <a href="index.html">Home</a>
+                    <a href="server-info.html">Server Info</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="leveling.html">Leveling</a>
+                    <a href="community.html" class="active">Community</a>
+                </div>
+                <button class="join-btn">JOIN SERVER</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Our Community</h1>
+            <p class="page-subtitle">Join the RavenMC family, connect with fellow players, learn about upcoming events, and see our amazing community projects.</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="discord-section">
+                <div class="discord-container">
+                    <div class="discord-content">
+                        <h2 class="discord-title">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" />
+                            </svg>
+                            Join Our Discord
+                        </h2>
+                        <p class="discord-description">Connect with fellow RavenMC players, get server announcements, participate in events, and get support from our staff team!</p>
+                        
+                        <ul class="discord-features">
+                            <li>Receive server announcements and updates</li>
+                            <li>Find teammates for in-game activities</li>
+                            <li>Share your builds and get feedback</li>
+                            <li>Report issues and receive support</li>
+                            <li>Participate in Discord-exclusive giveaways</li>
+                        </ul>
+                        
+                        <div class="discord-stats">
+                            <div class="discord-stat">
+                                <div class="discord-stat-value" id="discord-count">500+</div>
+                                <div class="discord-stat-label">Members</div>
+                            </div>
+                            <div class="discord-stat">
+                                <div class="discord-stat-value">50+</div>
+                                <div class="discord-stat-label">Online Now</div>
+                            </div>
+                            <div class="discord-stat">
+                                <div class="discord-stat-value">20+</div>
+                                <div class="discord-stat-label">Channels</div>
+                            </div>
+                        </div>
+                        
+                        <a href="https://discord.gg/XNmwKutUeJ" target="_blank" class="discord-join-btn">JOIN DISCORD</a>
+                    </div>
+                    
+                    <div class="discord-widget">
+                        <div class="discord-widget-header">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" />
+                            </svg>
+                            <div class="discord-widget-title">RavenMC Server</div>
+                        </div>
+                        <div class="discord-widget-content">
+                            <!-- Sample Discord members -->
+                            <div class="discord-member">
+                                <div class="discord-member-avatar" style="background-color: #6a0dad;">R</div>
+                                <div class="discord-member-info">
+                                    <div class="discord-member-name">Realisticrave</div>
+                                    <div class="discord-member-status"><span class="online-indicator"></span>Online</div>
+                                </div>
+                            </div>
+                            <div class="discord-member">
+                                <div class="discord-member-avatar" style="background-color: #6a0dad;">H</div>
+                                <div class="discord-member-info">
+                                    <div class="discord-member-name">Hydra - EmeraldTornado12</div>
+                                    <div class="discord-member-status"><span class="online-indicator"></span>Online</div>
+                                </div>
+                            </div>
+                            <div class="discord-member">
+                                <div class="discord-member-avatar" style="background-color: #6a0dad;">R</div>
+                                <div class="discord-member-info">
+                                    <div class="discord-member-name">Richie</div>
+                                    <div class="discord-member-status"><span class="online-indicator"></span>Online</div>
+                                </div>
+                            </div>
+                            <div class="discord-member">
+                                <div class="discord-member-avatar" style="background-color: #303030;">D</div>
+                                <div class="discord-member-info">
+                                    <div class="discord-member-name">DragonMaster99</div>
+                                    <div class="discord-member-status"><span class="online-indicator"></span>Online</div>
+                                </div>
+                            </div>
+                            <div class="discord-member">
+                                <div class="discord-member-avatar" style="background-color: #303030;">M</div>
+                                <div class="discord-member-info">
+                                    <div class="discord-member-name">MinerQueen</div>
+                                    <div class="discord-member-status"><span class="online-indicator"></span>Online</div>
+                                </div>
+                            </div>
+                            <div class="discord-member">
+                                <div class="discord-member-avatar" style="background-color: #303030;">S</div>
+                                <div class="discord-member-info">
+                                    <div class="discord-member-name">SkyPirate99</div>
+                                    <div class="discord-member-status"><span class="online-indicator"></span>Online</div>
+                                </div>
+                            </div>
+                            <div class="discord-member">
+                                <div class="discord-member-avatar" style="background-color: #303030;">A</div>
+                                <div class="discord-member-info">
+                                    <div class="discord-member-name">AquaArchitect</div>
+                                    <div class="discord-member-status"><span class="online-indicator"></span>Online</div>
+                                </div>
+                            </div>
+                            <div class="discord-member">
+                                <div class="discord-member-avatar" style="background-color: #303030;">R</div>
+                                <div class="discord-member-info">
+                                    <div class="discord-member-name">RavenBuilder42</div>
+                                    <div class="discord-member-status"><span class="online-indicator"></span>Online</div>
+                                </div>
+                            </div>
+                            <!-- Add more members as needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rules-section">
+                <h2 class="section-title">Community Rules</h2>
+                <p>To ensure everyone has an enjoyable experience, we ask all community members to follow these guidelines:</p>
+                
+                <div class="rules-grid">
+                    <div class="rule-card">
+                        <div class="rule-number">1</div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">Respect All Players</h3>
+                            <p class="rule-desc">Treat all players with respect. Harassment, discrimination, hate speech, and bullying are not tolerated. Keep chat appropriate and friendly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <div class="rule-number">2</div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">No Griefing or Stealing</h3>
+                            <p class="rule-desc">Respect other players' builds and property. Do not destroy, modify, or take items from other players without permission, even if their land is not claimed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <div class="rule-number">3</div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">No Hacking or Exploits</h3>
+                            <p class="rule-desc">Using hacked clients, mods that give unfair advantages, or exploiting bugs to gain an edge is prohibited. Allowed mods include Optifine, minimaps, and cosmetic mods.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <div class="rule-number">4</div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">PvP Restrictions</h3>
+                            <p class="rule-desc">PvP is only allowed in designated areas or during events. Forced PvP, spawn camping, and combat logging are not permitted.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <div class="rule-number">5</div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">Keep Chat Family-Friendly</h3>
+                            <p class="rule-desc">Maintain appropriate language in all chat channels. Excessive swearing, adult content, and inappropriate discussions are not allowed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rule-card">
+                        <div class="rule-number">6</div>
+                        <div class="rule-content">
+                            <h3 class="rule-title">No Spamming or Advertising</h3>
+                            <p class="rule-desc">Do not spam chat with repeated messages or excessive caps. Advertising other servers or unrelated content is prohibited.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="rules.html" class="join-btn">VIEW FULL RULES</a>
+                </div>
+            </div>
+            
+            <div class="events-section">
+                <h2 class="section-title">Upcoming Events</h2>
+                <p>Join us for these exciting community events! Participate to earn special rewards, raven XP, and have fun with fellow players.</p>
+                
+                <div class="event-timeline">
+                    <div class="event-item">
+                        <div class="event-date"></div>
+                        <div class="event-card">
+                            <div class="event-header">
+                                <h3 class="event-title">Raven Building Competition</h3>
+                                <div class="event-time">April 15, 2025 • 7:00 PM EST</div>
+                            </div>
+                            <div class="event-content">
+                                <p class="event-description">Show off your building skills in our monthly building competition! This month's theme is "Enchanted Forests" - create your own magical forest build inspired by our server's theme.</p>
+                                
+                                <div class="event-details">
+                                    <div class="event-detail">
+                                        <div class="event-detail-label">Location:</div>
+                                        <div class="event-detail-value">Creative World - Competition Zone</div>
+                                    </div>
+                                    <div class="event-detail">
+                                        <div class="event-detail-label">Duration:</div>
+                                        <div class="event-detail-value">3 Hours (Build Time) + Judging</div>
+                                    </div>
+                                    <div class="event-detail">
+                                        <div class="event-detail-label">Rewards:</div>
+                                        <div class="event-detail-value">1st Place: 10,000 Raven XP + Rare Items<br>2nd Place: 5,000 Raven XP<br>3rd Place: 2,500 Raven XP<br>All Participants: 500 Raven XP</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="event-buttons">
+                                    <button class="event-btn">Register</button>
+                                    <button class="event-btn">Add to Calendar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-item">
+                        <div class="event-date"></div>
+                        <div class="event-card">
+                            <div class="event-header">
+                                <h3 class="event-title">Void Citadel Raid</h3>
+                                <div class="event-time">April 20, 2025 • 8:00 PM EST</div>
+                            </div>
+                            <div class="event-content">
+                                <p class="event-description">Join forces with other players to challenge the Void Citadel - our most difficult dungeon filled with custom mobs and bosses. Perfect opportunity for Expert Ravens looking to evolve to Master Ravens!</p>
+                                
+                                <div class="event-details">
+                                    <div class="event-detail">
+                                        <div class="event-detail-label">Location:</div>
+                                        <div class="event-detail-value">Void Portal (Main World - Northern Mountains)</div>
+                                    </div>
+                                    <div class="event-detail">
+                                        <div class="event-detail-label">Requirements:</div>
+                                        <div class="event-detail-value">Level 40+ Recommended<br>Void Protection Potion<br>End-game Gear</div>
+                                    </div>
+                                    <div class="event-detail">
+                                        <div class="event-detail-label">Rewards:</div>
+                                        <div class="event-detail-value">Void Lord Trophy<br>15,000 Raven XP<br>Void-Infused Equipment<br>Evolution Materials</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="event-buttons">
+                                    <button class="event-btn">Register</button>
+                                    <button class="event-btn">Add to Calendar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-item">
+                        <div class="event-date"></div>
+                        <div class="event-card">
+                            <div class="event-header">
+                                <h3 class="event-title">Spring Festival</h3>
+                                <div class="event-time">April 25-27, 2025 • All Weekend</div>
+                            </div>
+                            <div class="event-content">
+                                <p class="event-description">Celebrate spring with our weekend-long festival! Participate in mini-games, treasure hunts, and special challenges. Perfect for players of all levels!</p>
+                                
+                                <div class="event-details">
+                                    <div class="event-detail">
+                                        <div class="event-detail-label">Location:</div>
+                                        <div class="event-detail-value">Festival Grounds (Main Hub)</div>
+                                    </div>
+                                    <div class="event-detail">
+                                        <div class="event-detail-label">Activities:</div>
+                                        <div class="event-detail-value">Parkour Challenge<br>Elytra Race<br>PvP Tournament<br>Treasure Hunt<br>Mob Arena</div>
+                                    </div>
+                                    <div class="event-detail">
+                                        <div class="event-detail-label">Rewards:</div>
+                                        <div class="event-detail-value">Spring Festival Cosmetics<br>Double XP Weekend<br>Special Spring-themed Items<br>Limited Edition Raven Skins</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="event-buttons">
+                                    <button class="event-btn">Learn More</button>
+                                    <button class="event-btn">Add to Calendar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="projects-section">
+                <h2 class="section-title">Community Projects</h2>
+                <p>Check out these amazing ongoing community projects. Join the build teams and contribute to these collaborative creations!</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/225" alt="Ravenshire City" loading="lazy">
+                            <div class="project-status">In Progress</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Ravenshire City</h3>
+                            <p class="project-description">A massive medieval city with raven-themed architecture. Join the build team to create shops, houses, and public facilities.</p>
+                            <div class="project-meta">
+                                <div class="project-lead">Lead: RavenBuilder42</div>
+                                <div class="project-members">25 Contributors</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/225" alt="Void Railway Network" loading="lazy">
+                            <div class="project-status">In Progress</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Void Railway Network</h3>
+                            <p class="project-description">An interconnected railway system running through the End dimension, connecting all major player bases and points of interest.</p>
+                            <div class="project-meta">
+                                <div class="project-lead">Lead: SkyPirate99</div>
+                                <div class="project-members">18 Contributors</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/225" alt="Crystal Dome Underwater Base" loading="lazy">
+                            <div class="project-status">Planning</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Crystal Dome Underwater Base</h3>
+                            <p class="project-description">A massive underwater dome city with purple crystal architecture. Will include public farms, trading hall, and community event space.</p>
+                            <div class="project-meta">
+                                <div class="project-lead">Lead: AquaArchitect</div>
+                                <div class="project-members">12 Contributors</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/api/placeholder/400/225" alt="Raven Museum" loading="lazy">
+                            <div class="project-status">Completed</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Raven Museum</h3>
+                            <p class="project-description">A grand museum showcasing server history, notable builds, and artifacts from previous events and seasons.</p>
+                            <div class="project-meta">
+                                <div class="project-lead">Lead: MinerQueen</div>
+                                <div class="project-members">30 Contributors</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="projects.html" class="join-btn">VIEW ALL PROJECTS</a>
+                </div>
+            </div>
+            
+            <div class="staff-section">
+                <h2 class="section-title">Meet The Staff</h2>
+                <p>Our dedicated team works hard to ensure RavenMC remains a fun, fair, and friendly environment for all players.</p>
+                
+                <div class="staff-grid">
+                    <!-- Realisticrave -->
+                    <div class="staff-card">
+                        <div class="staff-header">
+                            <div class="staff-avatar">
+                                <img src="realisticrave-profile.png" alt="Realisticrave" loading="lazy">
+                            </div>
+                            <div class="staff-info">
+                                <h3 class="staff-name">Realisticrave</h3>
+                                <p class="staff-role">Owner & Developer</p>
+                            </div>
+                        </div>
+                        <div class="staff-content">
+                            <p class="staff-bio">Founder of RavenMC and lead developer of our custom raven leveling system. Has been running Minecraft servers since 2012.</p>
+                            <div class="staff-badges">
+                                <span class="staff-badge">Custom Plugins</span>
+                                <span class="staff-badge">World Design</span>
+                                <span class="staff-badge">System Admin</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Richie -->
+                    <div class="staff-card">
+                        <div class="staff-header">
+                            <div class="staff-avatar">
+                                <img src="richie-profile.png" alt="Richie" loading="lazy">
+                            </div>
+                            <div class="staff-info">
+                                <h3 class="staff-name">Richie</h3>
+                                <p class="staff-role">Admin & Community Manager</p>
+                            </div>
+                        </div>
+                        <div class="staff-content">
+                            <p class="staff-bio">Responsible for community events, discord management, and player support. Known for creating elaborate in-game events.</p>
+                            <div class="staff-badges">
+                                <span class="staff-badge">Events</span>
+                                <span class="staff-badge">Player Support</span>
+                                <span class="staff-badge">Discord Management</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hydra - EmeraldTornado12 -->
+                    <div class="staff-card">
+                        <div class="staff-header">
+                            <div class="staff-avatar">
+                                <img src="hydra-profile.png" alt="Hydra - EmeraldTornado12" loading="lazy">
+                            </div>
+                            <div class="staff-info">
+                                <h3 class="staff-name">Hydra - EmeraldTornado12</h3>
+                                <p class="staff-role">Head Moderator</p>
+                            </div>
+                        </div>
+                        <div class="staff-content">
+                            <p class="staff-bio">Leads our moderation team to ensure server rules are followed and players have a positive experience. Available during EU/NA timezones.</p>
+                            <div class="staff-badges">
+                                <span class="staff-badge">Rule Enforcement</span>
+                                <span class="staff-badge">Conflict Resolution</span>
+                                <span class="staff-badge">Player Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="staff.html" class="join-btn">VIEW FULL STAFF TEAM</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div style="width: 60px; height: 60px;">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" fill="#4a0080" stroke="#9c4dcc" stroke-width="2" />
+                            <path d="M30 40C30 35 35 25 50 25C65 25 70 35 70 40C70 50 60 55 50 55C40 55 30 50 30 40Z" fill="#9c4dcc" />
+                            <circle cx="40" cy="35" r="5" fill="#121212" />
+                            <circle cx="60" cy="35" r="5" fill="#121212" />
+                            <path d="M40 65C45 75 55 75 60 65" stroke="#9c4dcc" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <h3 style="margin: 15px 0;">RavenMC</h3>
+                    <p>The ultimate Minecraft experience with unique raven-themed leveling system. Join our community and embark on an epic adventure!</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/XNmwKutUeJ" target="_blank" aria-label="Discord">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1a10.66 10.66 0 0 1-9-4.53s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.218-1.79.465-2.428.247-.67.642-1.276 1.153-1.772a4.91 4.91 0 0 1 1.772-1.153c.637-.247 1.363-.415 2.428-.465C8.944 2.013 9.283 2 12 2z" fill="white"/>
+                                <path d="M12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-10.22a6.22 6.22 0 1 0 0 12.44 6.22 6.22 0 0 0 0-12.44zm7.77-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="server-info.html">Server Info</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="leveling.html">Leveling System</a></li>
+                        <li><a href="rules.html">Rules</a></li>
+                        <li><a href="staff.html">Staff</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul>
+                        <li><a href="knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="player-guides.html">Player Guides</a></li>
+                        <li><a href="raven-skills.html">Raven Skills</a></li>
+                        <li><a href="server-map.html">Server Map</a></li>
+                        <li><a href="discord-bot.html">Discord Bot</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="bug-reports.html">Bug Reports</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="staff-application.html">Apply for Staff</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 RavenMC. All rights reserved. Not affiliated with Mojang AB.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="discord-integration.js"></script>
+    <script src="server-status.js"></script>
+</body>
+</html>

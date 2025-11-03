@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="minecraft_title.png" sizes="96x96" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RavenMC - Frequently Asked Questions</title>
+    <style>
+        :root {
+            --primary: #6a0dad;  /* Deep purple */
+            --primary-light: #9c4dcc;
+            --primary-dark: #4a0080;
+            --accent: #a64dff;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #f0f0f0;
+            --gray: #303030;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%236a0dad' fill-opacity='0.1' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/svg%3E");
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--darker);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--light);
+        }
+        
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        .menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .menu a:hover {
+            color: var(--accent);
+        }
+        
+        .menu a:hover::after {
+            width: 100%;
+        }
+        
+        .join-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .join-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background-color: var(--darker);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("/api/placeholder/1200/300") center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: var(--primary-light);
+        }
+        
+        .page-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-intro {
+            background-color: var(--gray);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            line-height: 1.7;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .category-btn {
+            padding: 10px 20px;
+            background-color: var(--gray);
+            border: none;
+            border-radius: 30px;
+            color: var(--light);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .category-btn.active {
+            background-color: var(--primary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .search-box {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            padding-left: 50px;
+            background-color: var(--gray);
+            border: 1px solid var(--primary-dark);
+            border-radius: 5px;
+            color: var(--light);
+            font-size: 1.1rem;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(106, 13, 173, 0.3);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-light);
+        }
+        
+        .faq-category-section {
+            margin-bottom: 60px;
+        }
+        
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-light);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .faq-item {
+            background-color: var(--gray);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(106, 13, 173, 0.1);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-light);
+            transition: transform 0.3s;
+        }
+        
+        .faq-question.active {
+            background-color: var(--primary-dark);
+        }
+        
+        .faq-question.active::after {
+            content: '-';
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        
+        .faq-answer.show {
+            padding: 20px;
+            max-height: 500px;
+            border-top: 1px solid var(--darker);
+        }
+        
+        .faq-answer-content {
+            line-height: 1.7;
+        }
+        
+        .faq-answer-content ul, 
+        .faq-answer-content ol {
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer-content li {
+            margin-bottom: 5px;
+        }
+        
+        .faq-answer-content p + p {
+            margin-top: 10px;
+        }
+        
+        .faq-answer-content code {
+            background-color: var(--darker);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        .faq-answer-content a {
+            color: var(--primary-light);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--primary-light);
+            transition: color 0.3s, border-color 0.3s;
+        }
+        
+        .faq-answer-content a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        /* Contact CTA */
+        .contact-cta {
+            background-color: var(--primary-dark);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-cta h2 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .contact-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
+        }
+        
+        .contact-btn {
+            background-color: white;
+            color: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .contact-btn:hover {
+            background-color: var(--light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--gray);
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .footer-logo img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo p {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-light);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--gray);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .category-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div style="width: 50px; height: 50px;">
+                        <img src="minecraft_title.png" alt="Logo">
+                    </div>
+                    <h1>Raven<span>MC</span></h1>
+                </div>
+                <div class="menu">
+                    <a href="index.html">Home</a>
+                    <a href="server-info.html">Server Info</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="leveling-system.html">Leveling</a>
+                    <a href="community.html">Community</a>
+                </div>
+                <button class="join-btn">JOIN SERVER</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Frequently Asked Questions</h1>
+            <p class="page-subtitle">Find answers to common questions about RavenMC, our features, and gameplay mechanics.</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="faq-container">
+                <div class="faq-intro">
+                    <p>Welcome to our FAQ section! Here you'll find answers to the most common questions about RavenMC. If you can't find the information you're looking for, please don't hesitate to <a href="contact.html" style="color: var(--primary-light);">contact our staff team</a> for assistance.</p>
+                </div>
+                
+                <div class="faq-categories">
+                    <button class="category-btn active" data-category="all">All Questions</button>
+                    <button class="category-btn" data-category="getting-started">Getting Started</button>
+                    <button class="category-btn" data-category="leveling">Raven Leveling</button>
+                    <button class="category-btn" data-category="gameplay">Gameplay</button>
+                    <button class="category-btn" data-category="technical">Technical Help</button>
+                    <button class="category-btn" data-category="community">Community</button>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search FAQ...">
+                    <div class="search-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary-light)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Getting Started Section -->
+                <div class="faq-category-section" data-category="getting-started">
+                    <h2 class="category-title">Getting Started</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I join RavenMC?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>To join RavenMC, follow these simple steps:</p>
+                                <ol>
+                                    <li>Launch Minecraft Java Edition (version 1.20 or higher)</li>
+                                    <li>Click on "Multiplayer" from the main menu</li>
+                                    <li>Click "Add Server"</li>
+                                    <li>Enter "RavenMC" as the server name</li>
+                                    <li>Enter <code>play.ravenmc.com</code> as the server address</li>
+                                    <li>Click "Done" and then select the server to join</li>
+                                </ol>
+                                <p>That's it! You'll connect to our server and spawn in our welcome hub where you can begin your adventure.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What Minecraft version does RavenMC support?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>RavenMC currently supports Minecraft Java Edition version 1.20 and above. We recommend using the latest version for the best experience, but backward compatibility is maintained for most features.</p>
+                                <p>Please note that if you're using an older version, some of our custom features might not display or function correctly. We try to keep up with the latest stable Minecraft releases to provide the best experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is RavenMC free to play?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes, RavenMC is completely free to play! All players have access to the core gameplay features, including our unique raven leveling system, custom worlds, and community events.</p>
+                                <p>We do offer optional donations for players who wish to support the server, and donors receive cosmetic perks as a thank you, but these do not provide any gameplay advantages. We maintain a strict "no pay-to-win" policy.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What mods or texture packs are allowed on RavenMC?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>We allow client-side mods that don't provide unfair advantages. The following are examples of allowed and disallowed mods:</p>
+                                
+                                <p><strong>Allowed:</strong></p>
+                                <ul>
+                                    <li>OptiFine</li>
+                                    <li>Minimap mods (without entity radar or cave mapping features)</li>
+                                    <li>Cosmetic mods (shaders, better animations, etc.)</li>
+                                    <li>Performance improvement mods</li>
+                                    <li>Replay mod</li>
+                                    <li>Any texture pack or resource pack</li>
+                                </ul>
+                                
+                                <p><strong>Disallowed:</strong></p>
+                                <ul>
+                                    <li>X-ray mods or texture packs</li>
+                                    <li>Auto-click/macro mods</li>
+                                    <li>Flight or movement hacks</li>
+                                    <li>Combat assistance mods (Kill Aura, Aim Bot, etc.)</li>
+                                    <li>Any mod that reveals hidden information</li>
+                                </ul>
+                                
+                                <p>If you're unsure about a specific mod, please ask a staff member before using it on our server.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Raven Leveling Section -->
+                <div class="faq-category-section" data-category="leveling">
+                    <h2 class="category-title">Raven Leveling System</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What is the Raven Leveling System?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>The Raven Leveling System is our unique progression feature that allows players to obtain and evolve a magical raven companion. Your raven starts as a novice and can evolve through five distinct tiers, each with new abilities and perks.</p>
+                                <p>As you complete activities in the game, you'll earn Raven XP that gradually increases your level. At certain milestones, you can evolve your raven to the next tier, unlocking new capabilities.</p>
+                                <p>The five tiers of raven evolution are:</p>
+                                <ol>
+                                    <li><strong>Novice Raven:</strong> Levels 1-10</li>
+                                    <li><strong>Adept Raven:</strong> Levels 11-25</li>
+                                    <li><strong>Expert Raven:</strong> Levels 26-50</li>
+                                    <li><strong>Master Raven:</strong> Levels 51-75</li>
+                                    <li><strong>Legendary Raven:</strong> Levels 76-100</li>
+                                </ol>
+                                <p>For a detailed explanation of all raven abilities and evolution requirements, check out our <a href="leveling-system.html">Leveling System</a> page.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I get my first raven companion?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>When you first join the server, you'll receive a Raven Egg as part of the new player welcome package. Right-click with the egg to hatch your companion and begin your journey.</p>
+                                <p>If you've lost your egg or didn't receive one (which can happen rarely due to technical issues), you can get a replacement by visiting the Raven Master NPC in the main spawn area or by using the command <code>/raven claim</code>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What are the fastest ways to earn Raven XP?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>There are many ways to earn Raven XP on our server, but some methods are more efficient than others:</p>
+                                <ul>
+                                    <li><strong>Daily Quests:</strong> Complete daily quests from the Raven Master for guaranteed XP rewards (50-500 XP per quest)</li>
+                                    <li><strong>Server Events:</strong> Participate in scheduled events for large XP rewards (100-1000 XP per event)</li>
+                                    <li><strong>Boss Battles:</strong> Defeat special bosses for substantial XP rewards (500+ XP)</li>
+                                    <li><strong>Mining Rare Ores:</strong> Mine rarer ores like diamond and ancient debris (10-20 XP per ore)</li>
+                                    <li><strong>Building:</strong> Place blocks in creative and unique structures (1-5 XP per block, with bonuses for artistic builds)</li>
+                                </ul>
+                                <p>We also have double XP weekends every month, so watch for announcements about these special events!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I check my current Raven level and XP?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>You can check your current Raven level, XP, and abilities using the following commands:</p>
+                                <ul>
+                                    <li><code>/raven info</code> - Displays your current raven level, XP, and tier</li>
+                                    <li><code>/raven abilities</code> - Shows all abilities your raven currently has</li>
+                                    <li><code>/raven next</code> - Shows requirements for the next evolution tier</li>
+                                </ul>
+                                <p>You can also see your XP progress on the server scoreboard, which appears on the right side of your screen by default.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gameplay Section -->
+                <div class="faq-category-section" data-category="gameplay">
+                    <h2 class="category-title">Gameplay</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I protect my builds from griefing?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>We use a land claiming system to protect players' builds. To claim land:</p>
+                                <ol>
+                                    <li>Hold a golden shovel in your hand (you can get one from the shop or craft it)</li>
+                                    <li>Right-click on one corner of the area you want to protect</li>
+                                    <li>Right-click on the opposite corner to complete the claim</li>
+                                </ol>
+                                <p>You start with 2,000 claim blocks as a new player and earn more as you play. You can see how many claim blocks you have by using <code>/claim blocks</code>.</p>
+                                <p>To add trusted players to your claim (allowing them to build within it), use <code>/trust [playername]</code> while standing in your claim. For more claim commands, use <code>/claim help</code>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What custom worlds are available on RavenMC?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>RavenMC features several custom worlds that you can explore:</p>
+                                <ul>
+                                    <li><strong>Main World:</strong> Our primary survival world with custom terrain and structures</li>
+                                    <li><strong>Resource World:</strong> A world that resets monthly, perfect for gathering resources without affecting the main world</li>
+                                    <li><strong>Crystal Forest:</strong> A unique biome with purple trees and floating crystals</li>
+                                    <li><strong>Void Realms:</strong> An end-game area with challenging dungeons and valuable loot</li>
+                                    <li><strong>Creative World:</strong> A creative mode world for testing builds</li>
+                                    <li><strong>PvP Arena:</strong> Dedicated combat areas for player versus player battles</li>
+                                </ul>
+                                <p>You can travel between worlds using command portals found in the main spawn area or by using commands like <code>/warp resource</code>, <code>/warp crystal</code>, etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is PvP enabled on the server?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>PvP (Player versus Player combat) is disabled in most areas of the server to prevent unwanted conflicts. However, PvP is enabled in the following locations:</p>
+                                <ul>
+                                    <li>The PvP Arena</li>
+                                    <li>The Wilderness zones</li>
+                                    <li>During specific PvP events</li>
+                                </ul>
+                                <p>Players can also enable PvP in their own claimed areas using <code>/claim pvp</code> if they want to host private combat events or arenas.</p>
+                                <p>Note that even in PvP-enabled areas, we have strict rules against harassment, spawn killing, and combat logging. Please review our <a href="rules.html">Server Rules</a> for complete details.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How does the economy system work?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>RavenMC uses a currency called "Raven Tokens" for our economy. You can earn tokens through:</p>
+                                <ul>
+                                    <li>Selling items to the server shop</li>
+                                    <li>Trading with other players</li>
+                                    <li>Completing quests and challenges</li>
+                                    <li>Participating in server events</li>
+                                </ul>
+                                <p>You can use tokens to purchase items from the server shop, buy special abilities, claim more land, and trade with other players.</p>
+                                <p>Useful economy commands include:</p>
+                                <ul>
+                                    <li><code>/balance</code> - Check your current token balance</li>
+                                    <li><code>/pay [player] [amount]</code> - Send tokens to another player</li>
+                                    <li><code>/shop</code> - Open the server shop menu</li>
+                                    <li><code>/sell</code> - Sell items in your hand to the server</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical Help Section -->
+                <div class="faq-category-section" data-category="technical">
+                    <h2 class="category-title">Technical Help</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">I'm experiencing lag or connection issues. What can I do?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>If you're experiencing lag or connection issues, try these solutions:</p>
+                                <ol>
+                                    <li><strong>Check your internet connection:</strong> Run a speed test to ensure your connection is stable</li>
+                                    <li><strong>Restart your game and router:</strong> Sometimes a simple restart resolves connection issues</li>
+                                    <li><strong>Adjust video settings:</strong> Lower your render distance and graphics settings</li>
+                                    <li><strong>Close background applications:</strong> Other programs might be using your bandwidth or system resources</li>
+                                    <li><strong>Use a wired connection:</strong> If possible, connect via Ethernet instead of Wi-Fi</li>
+                                    <li><strong>Install OptiFine:</strong> This mod can significantly improve performance</li>
+                                </ol>
+                                <p>If you're still experiencing issues after trying these steps, please report it to our staff using <code>/report lag</code> in-game or by opening a ticket on our Discord server with your location, internet provider, and a detailed description of the problem.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">The server says "Outdated server" or "Outdated client" when I try to join.</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>This error occurs when there's a version mismatch between your Minecraft client and our server. RavenMC currently supports Minecraft Java Edition version 1.20 and above.</p>
+                                <p>To fix this issue:</p>
+                                <ol>
+                                    <li>Open your Minecraft Launcher</li>
+                                    <li>Click on "Installations" tab</li>
+                                    <li>Create a new installation or edit an existing one</li>
+                                    <li>Select version 1.20 (or the latest version)</li>
+                                    <li>Save and launch the game with this version</li>
+                                </ol>
+                                <p>If you're already using the correct version and still see this error, it might be because our server is undergoing maintenance or an update. Check our Discord server for announcements about maintenance periods.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I link my Discord account to my Minecraft account?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Linking your Discord and Minecraft accounts allows you to receive role-based perks, notifications, and participate in exclusive events. To link your accounts:</p>
+                                <ol>
+                                    <li>Join our <a href="https://discord.gg/XNmwKutUeJ">Discord server</a> if you haven't already</li>
+                                    <li>In-game, use the command <code>/discord link</code></li>
+                                    <li>You'll receive a unique code in the game</li>
+                                    <li>Go to our Discord server and send the code in the #account-linking channel</li>
+                                    <li>Our bot will confirm the link and assign appropriate roles</li>
+                                </ol>
+                                <p>If you ever need to unlink your accounts or link to a different Discord account, use <code>/discord unlink</code> in-game and repeat the process.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">I found a bug. How do I report it?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>We appreciate bug reports as they help us improve the server! To report a bug:</p>
+                                <ul>
+                                    <li><strong>In-game:</strong> Use the command <code>/bug [description]</code></li>
+                                    <li><strong>Discord:</strong> Open a ticket in the #bug-reports channel</li>
+                                    <li><strong>Website:</strong> Submit a bug report through our <a href="bug-reports.html">Bug Reports</a> page</li>
+                                </ul>
+                                <p>Please include as much detail as possible, such as:</p>
+                                <ul>
+                                    <li>What happened</li>
+                                    <li>When it happened</li>
+                                    <li>Steps to reproduce the bug</li>
+                                    <li>Screenshots or video (if available)</li>
+                                </ul>
+                                <p>For critical bugs that affect gameplay or could be exploited, please report them directly to a staff member rather than discussing them in public chat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Community Section -->
+                <div class="faq-category-section" data-category="community">
+                    <h2 class="category-title">Community</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What kind of events does RavenMC host?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>We host a variety of events to keep our community engaged and having fun! Some of our regular events include:</p>
+                                <ul>
+                                    <li><strong>Building Competitions:</strong> Themed building contests with prizes for the winners</li>
+                                    <li><strong>Dungeon Raids:</strong> Group challenges against powerful bosses and mobs</li>
+                                    <li><strong>PvP Tournaments:</strong> Structured combat competitions with various formats</li>
+                                    <li><strong>Treasure Hunts:</strong> Server-wide scavenger hunts with valuable rewards</li>
+                                    <li><strong>Seasonal Festivals:</strong> Special events for holidays with unique rewards</li>
+                                    <li><strong>Community Projects:</strong> Collaborative builds that everyone can contribute to</li>
+                                </ul>
+                                <p>Event announcements are posted on our Discord server and in-game through broadcast messages. Most events offer exclusive rewards and significant XP bonuses for participants.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How can I apply for staff positions?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>We're always looking for dedicated players to join our staff team! To apply, you need to meet the following basic requirements:</p>
+                                <ul>
+                                    <li>Be at least 16 years old</li>
+                                    <li>Have been active on the server for at least 1 month</li>
+                                    <li>Have no previous rule violations</li>
+                                    <li>Be able to communicate clearly in English</li>
+                                    <li>Be willing to volunteer at least 5 hours per week</li>
+                                </ul>
+                                <p>If you meet these requirements, you can apply through our <a href="staff-application.html">Staff Application</a> page. The application process typically includes:</p>
+                                <ol>
+                                    <li>Written application</li>
+                                    <li>Interview with an admin</li>
+                                    <li>Trial period (usually 2 weeks)</li>
+                                </ol>
+                                <p>We look for maturity, responsibility, problem-solving skills, and a genuine desire to help the community.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How do I report a player breaking the rules?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>If you witness a player breaking our server rules, you can report them through several methods:</p>
+                                <ul>
+                                    <li><strong>In-game:</strong> Use the command <code>/report [playername] [reason]</code></li>
+                                    <li><strong>Discord:</strong> Open a ticket in the #report-player channel</li>
+                                    <li><strong>Contact Form:</strong> Submit a detailed report through our <a href="contact.html">Contact Us</a> page</li>
+                                </ul>
+                                <p>Please include as much information as possible:</p>
+                                <ul>
+                                    <li>The player's exact username</li>
+                                    <li>Date and time of the incident</li>
+                                    <li>Description of what happened</li>
+                                    <li>Evidence (screenshots, chat logs, etc.)</li>
+                                    <li>Names of any witnesses</li>
+                                </ul>
+                                <p>All reports are handled confidentially by our staff team. False reporting is considered a rule violation, so please ensure your reports are accurate and truthful.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Does RavenMC have a Discord server?</div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>Yes! We have an active Discord server where our community gathers. It's the best place to:</p>
+                                <ul>
+                                    <li>Stay updated on server news and announcements</li>
+                                    <li>Chat with other players and staff</li>
+                                    <li>Get quick support for any issues</li>
+                                    <li>Participate in voice chat during events</li>
+                                    <li>Share your builds and screenshots</li>
+                                    <li>Suggest new features for the server</li>
+                                </ul>
+                                <p>You can join our Discord server using this invite link: <a href="https://discord.gg/XNmwKutUeJ">https://discord.gg/XNmwKutUeJ</a></p>
+                                <p>We recommend linking your Minecraft account to your Discord account to receive role-based perks and notifications. Check the "How do I link my Discord account to my Minecraft account?" FAQ for instructions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <h2>Still Have Questions?</h2>
+                    <p>Can't find the answer you're looking for? Our friendly staff team is here to help! Contact us directly and we'll get back to you as soon as possible.</p>
+                    <a href="contact.html" class="contact-btn">CONTACT US</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div style="width: 60px; height: 60px;">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" fill="#4a0080" stroke="#9c4dcc" stroke-width="2" />
+                            <path d="M30 40C30 35 35 25 50 25C65 25 70 35 70 40C70 50 60 55 50 55C40 55 30 50 30 40Z" fill="#9c4dcc" />
+                            <circle cx="40" cy="35" r="5" fill="#121212" />
+                            <circle cx="60" cy="35" r="5" fill="#121212" />
+                            <path d="M40 65C45 75 55 75 60 65" stroke="#9c4dcc" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <h3 style="margin: 15px 0;">RavenMC</h3>
+                    <p>The ultimate Minecraft experience with unique raven-themed leveling system. Join our community and embark on an epic adventure!</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/XNmwKutUeJ" target="_blank" aria-label="Discord">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1a10.66 10.66 0 0 1-9-4.53s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.218-1.79.465-2.428.247-.67.642-1.276 1.153-1.772a4.91 4.91 0 0 1 1.772-1.153c.637-.247 1.363-.415 2.428-.465C8.944 2.013 9.283 2 12 2z" fill="white"/>
+                                <path d="M12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-10.22a6.22 6.22 0 1 0 0 12.44 6.22 6.22 0 0 0 0-12.44zm7.77-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="server-info.html">Server Info</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="leveling-system.html">Leveling System</a></li>
+                        <li><a href="rules.html">Rules</a></li>
+                        <li><a href="staff.html">Staff</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul>
+                        <li><a href="knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="player-guides.html">Player Guides</a></li>
+                        <li><a href="raven-skills.html">Raven Skills</a></li>
+                        <li><a href="server-map.html">Server Map</a></li>
+                        <li><a href="discord-bot.html">Discord Bot</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="bug-reports.html">Bug Reports</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="staff-application.html">Apply for Staff</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 RavenMC. All rights reserved. Not affiliated with Mojang AB.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Category filtering
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const faqSections = document.querySelectorAll('.faq-category-section');
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        // Set up category filtering
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const category = button.getAttribute('data-category');
+                
+                // Show/hide sections based on category
+                if (category === 'all') {
+                    faqSections.forEach(section => section.style.display = 'block');
+                    faqItems.forEach(item => item.style.display = 'block');
+                } else {
+                    faqSections.forEach(section => {
+                        if (section.getAttribute('data-category') === category) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+        
+        // FAQ accordion functionality
+        const questions = document.querySelectorAll('.faq-question');
+        
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all other questions
+                questions.forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('show');
+                });
+                
+                // Toggle the clicked question
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('show');
+                }
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            if (searchTerm.length < 2) {
+                // Reset display if search term is too short
+                faqItems.forEach(item => item.style.display = 'block');
+                faqSections.forEach(section => section.style.display = 'block');
+                return;
+            }
+            
+            // Show all sections for search
+            faqSections.forEach(section => section.style.display = 'block');
+            
+            // Filter FAQ items
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Hide empty sections
+            faqSections.forEach(section => {
+                const visibleItems = section.querySelectorAll('.faq-item[style="display: block"]');
+                if (visibleItems.length === 0) {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script src="discord-integration.js"></script>
+</body>
+</html>

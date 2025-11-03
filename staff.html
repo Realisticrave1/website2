@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="minecraft_title.png" sizes="96x96" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RavenMC - Staff Team</title>
+    <style>
+        :root {
+            --primary: #6a0dad;  /* Deep purple */
+            --primary-light: #9c4dcc;
+            --primary-dark: #4a0080;
+            --accent: #a64dff;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #f0f0f0;
+            --gray: #303030;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%236a0dad' fill-opacity='0.1' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/svg%3E");
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--darker);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--light);
+        }
+        
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        .menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .menu a:hover {
+            color: var(--accent);
+        }
+        
+        .menu a:hover::after {
+            width: 100%;
+        }
+        
+        .join-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .join-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background-color: var(--darker);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("/api/placeholder/1200/300") center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            color: var(--primary-light);
+        }
+        
+        .page-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--primary-light);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .info-box {
+            background-color: var(--gray);
+            border-radius: 10px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info-box-header {
+            padding: 15px 20px;
+            background-color: var(--primary-dark);
+            border-bottom: 1px solid var(--primary);
+        }
+        
+        .info-box-title {
+            font-size: 1.5rem;
+            color: var(--light);
+        }
+        
+        .info-box-content {
+            padding: 25px;
+        }
+        
+        /* Staff Team Section */
+        .staff-intro {
+            background-color: var(--gray);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .staff-categories {
+            margin-bottom: 60px;
+        }
+        
+        .staff-category {
+            margin-bottom: 50px;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .category-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--primary-light);
+        }
+        
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .staff-card {
+            background-color: var(--gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .staff-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .staff-header {
+            background-color: var(--primary-dark);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .staff-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid var(--primary-light);
+            overflow: hidden;
+        }
+        
+        .staff-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .staff-info {
+            flex: 1;
+        }
+        
+        .staff-name {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .staff-role {
+            font-size: 1rem;
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+        
+        .staff-since {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 5px;
+        }
+        
+        .staff-content {
+            padding: 20px;
+        }
+        
+        .staff-bio {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .staff-details {
+            background-color: var(--darker);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .staff-detail {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .staff-detail:last-child {
+            margin-bottom: 0;
+        }
+        
+        .staff-detail-label {
+            font-weight: bold;
+            width: 100px;
+            color: var(--primary-light);
+        }
+        
+        .staff-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .staff-badge {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .staff-socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .staff-social {
+            width: 30px;
+            height: 30px;
+            background-color: var(--darker);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .staff-social:hover {
+            background-color: var(--primary);
+        }
+        
+        /* Apply Section */
+        .apply-section {
+            margin-top: 60px;
+        }
+        
+        .apply-card {
+            background-color: var(--primary-dark);
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .apply-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/svg%3E");
+            z-index: 0;
+        }
+        
+        .apply-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .apply-title {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .apply-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .apply-requirements {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .apply-requirements h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        
+        .apply-requirements ul {
+            list-style: none;
+        }
+        
+        .apply-requirements li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .apply-requirements li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .apply-btn {
+            background-color: white;
+            color: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .apply-btn:hover {
+            background-color: var(--light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--gray);
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .footer-logo img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo p {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-light);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--gray);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div style="width: 50px; height: 50px;">
+                        <img src="minecraft_title.png" alt="Logo">
+                    </div>
+                    <h1>Raven<span>MC</span></h1>
+                </div>
+                <div class="menu">
+                    <a href="index.html">Home</a>
+                    <a href="server-info.html">Server Info</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="leveling-system.html">Leveling</a>
+                    <a href="community.html">Community</a>
+                </div>
+                <button class="join-btn">JOIN SERVER</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Meet Our Staff Team</h1>
+            <p class="page-subtitle">The dedicated individuals who work hard to make RavenMC a fun, fair, and friendly environment for all players.</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <div class="staff-intro">
+                <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary-light);">Our Team</h2>
+                <p style="line-height: 1.7; margin-bottom: 15px;">The RavenMC staff team is comprised of dedicated volunteers who are passionate about creating an amazing Minecraft experience for our community. Each staff member undergoes a rigorous application and training process to ensure they have the skills and character needed to represent our server.</p>
+                <p style="line-height: 1.7;">Our team works around the clock to provide server maintenance, player support, event organization, and rule enforcement. If you ever need assistance or have questions, don't hesitate to reach out to any of our staff members!</p>
+            </div>
+            
+            <div class="staff-categories">
+                <!-- Administration Team -->
+                <div class="staff-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L4 5V11.09C4 16.14 7.41 20.85 12 22C16.59 20.85 20 16.14 20 11.09V5L12 2ZM18 11.09C18 15.09 15.45 18.79 12 19.92C8.55 18.79 6 15.1 6 11.09V6.39L12 4.14L18 6.39V11.09Z"/>
+                                <path d="M12 7L9 10L11 10L11 13L13 13L13 10L15 10L12 7Z"/>
+                            </svg>
+                        </div>
+                        <h2 class="category-title">Administration Team</h2>
+                    </div>
+                    
+                    <div class="staff-grid">
+                        <!-- Realisticrave -->
+                        <div class="staff-card">
+                            <div class="staff-header">
+                                <div class="staff-avatar">
+                                    <img src="realisticrave-profile.png" alt="Realisticrave" loading="lazy">
+                                </div>
+                                <div class="staff-info">
+                                    <h3 class="staff-name">Realisticrave</h3>
+                                    <p class="staff-role">Owner & Lead Developer</p>
+                                    <p class="staff-since">Staff Since: Jan 2023</p>
+                                </div>
+                            </div>
+                            <div class="staff-content">
+                                <p class="staff-bio">Founder of RavenMC and lead developer of our custom raven leveling system. Passionate about creating unique gameplay experiences and building a positive community. Has been running Minecraft servers since 2020.</p>
+                                
+                                <div class="staff-details">
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Timezone:</div>
+                                        <div>EST (UTC-5)</div>
+                                    </div>
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Languages:</div>
+                                        <div>English, Japanese</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="staff-badges">
+                                    <span class="staff-badge">Custom Plugins</span>
+                                    <span class="staff-badge">World Design</span>
+                                    <span class="staff-badge">System Admin</span>
+                                </div>
+                                
+                                <div class="staff-socials">
+                                    <a href="#" class="staff-social" aria-label="Discord">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="staff-social" aria-label="GitHub">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="staff-social" aria-label="YouTube">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Richie -->
+                        <div class="staff-card">
+                            <div class="staff-header">
+                                <div class="staff-avatar">
+                                    <img src="richie-profile.png" alt="Richie" loading="lazy">
+                                </div>
+                                <div class="staff-info">
+                                    <h3 class="staff-name">Richie</h3>
+                                    <p class="staff-role">Admin & Server Manager</p>
+                                    <p class="staff-since">Staff Since: Feb 2023</p>
+                                </div>
+                            </div>
+                            <div class="staff-content">
+                                <p class="staff-bio">Responsible for community events, Server Optimization, and player support. Known for creating elaborate in-game events and maintaining community engagement. Has a knack for creating imaginative and fun server activities.</p>
+                                
+                                <div class="staff-details">
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Timezone:</div>
+                                        <div>EST (UTC-5)</div>
+                                    </div>
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Languages:</div>
+                                        <div>English</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="staff-badges">
+                                    <span class="staff-badge">Events</span>
+                                    <span class="staff-badge">Player Support</span>
+                                    <span class="staff-badge">Server Optimization</span>
+                                </div>
+                                
+                                <div class="staff-socials">
+                                    <a href="#" class="staff-social" aria-label="Discord">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="staff-social" aria-label="Twitter">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1a10.66 10.66 0 0 1-9-4.53s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="staff-social" aria-label="Twitch">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.149 0L0.5 4.5V20.5H6V24H9.5L13 20.5H17.5L23.5 14.5V0H2.149ZM21.5 13.5L18 17H12.5L9 20.5V17H4.5V2H21.5V13.5Z"/>
+                                            <path d="M18 5H16V11H18V5Z"/>
+                                            <path d="M12 5H10V11H12V5Z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mysforce -->
+                        <div class="staff-card">
+                            <div class="staff-header">
+                                <div class="staff-avatar">
+                                    <img src="Mysforce.png" alt="Mysforce" loading="lazy">
+                                </div>
+                                <div class="staff-info">
+                                    <h3 class="staff-name">Mysforce</h3>
+                                    <p class="staff-role">Discord Admin & Head Moderator</p>
+                                    <p class="staff-since">Staff Since: April 2025</p>
+                                </div>
+                            </div>
+                            <div class="staff-content">
+                                <p class="staff-bio">Manages server infrastructure, Discord Management, and Discord developer. Set uped the discord server.</p>
+                                
+                                <div class="staff-details">
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Timezone:</div>
+                                        <div>EST (UTC-5)</div>
+                                    </div>
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Languages:</div>
+                                        <div>English</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="staff-badges">
+                                    <span class="staff-badge">Technical Support</span>
+                                    <span class="staff-badge">Discord developer</span>
+                                    <span class="staff-badge">Discord Management</span>
+                                </div>
+                                
+                                <div class="staff-socials">
+                                    <a href="#" class="staff-social" aria-label="Discord">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="staff-social" aria-label="GitHub">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Moderation Team -->
+                <div class="staff-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM19 11C19 15.52 16.02 19.69 12 20.93C7.98 19.69 5 15.52 5 11V6.3L12 3.19L19 6.3V11ZM7.41 11.59L6 13L10 17L18 9L16.59 7.58L10 14.17L7.41 11.59Z"/>
+                            </svg>
+                        </div>
+                        <h2 class="category-title">Moderation Team</h2>
+                    </div>
+                    
+                    <div class="staff-grid">
+                        <!-- Baojie -->
+                        <div class="staff-card">
+                            <div class="staff-header">
+                                <div class="staff-avatar">
+                                    <img src="Baojie.png" alt="Baojie" loading="lazy">
+                                </div>
+                                <div class="staff-info">
+                                    <h3 class="staff-name">Baojie</h3>
+                                    <p class="staff-role">Moderator & Helper</p>
+                                    <p class="staff-since">Staff Since: Apr 2025</p>
+                                </div>
+                            </div>
+                            <div class="staff-content">
+                                <p class="staff-bio">Specializes in anti-cheat monitoring and preventing unfair gameplay advantages. Excellent at identifying unauthorized modifications and ensuring a level playing field for all players.</p>
+                                
+                                <div class="staff-details">
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Timezone:</div>
+                                        <div>PT (UTC-7)</div>
+                                    </div>
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Languages:</div>
+                                        <div>English, Chinese</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="staff-badges">
+                                    <span class="staff-badge">Rule Enforcement</span>
+                                    <span class="staff-badge">Conflict Resolution</span>
+                                    <span class="staff-badge">Player Support</span>
+                                </div>
+                                
+                                <div class="staff-socials">
+                                    <a href="#" class="staff-social" aria-label="Discord">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="staff-social" aria-label="Twitter">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1a10.66 10.66 0 0 1-9-4.53s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CoopaTroopa -->
+                        <div class="staff-card">
+                            <div class="staff-header">
+                                <div class="staff-avatar">
+                                    <img src="CoopaTroopa.png" alt="CoopaTroopa" loading="lazy">
+                                </div>
+                                <div class="staff-info">
+                                    <h3 class="staff-name">CoopaTroopa</h3>
+                                    <p class="staff-role">Senior Moderator & Helper</p>
+                                    <p class="staff-since">Staff Since: May 2023</p>
+                                </div>
+                            </div>
+                            <div class="staff-content">
+                                <p class="staff-bio">Specializes in handling complex player disputes and enforcing server rules. Known for fair judgment and patience when dealing with rule violations. Plays a key role in mentoring new moderators.</p>
+                                
+                                <div class="staff-details">
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Timezone:</div>
+                                        <div>N/A</div>
+                                    </div>
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Languages:</div>
+                                        <div>English</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="staff-badges">
+                                    <span class="staff-badge">Chat Moderation</span>
+                                    <span class="staff-badge">Player Disputes</span>
+                                    <span class="staff-badge">Staff Training</span>
+                                </div>
+                                
+                                <div class="staff-socials">
+                                    <a href="#" class="staff-social" aria-label="Discord">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Retired Team -->
+                <div class="staff-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 19H11V17H13V19ZM15.07 11.25L14.17 12.17C13.45 12.9 13 13.5 13 15H11V14.5C11 13.4 11.45 12.4 12.17 11.67L13.41 10.41C13.78 10.05 14 9.55 14 9C14 7.9 13.1 7 12 7C10.9 7 10 7.9 10 9H8C8 6.79 9.79 5 12 5C14.21 5 16 6.79 16 9C16 9.88 15.64 10.68 15.07 11.25Z"/>
+                            </svg>
+                        </div>
+                        <h2 class="category-title">Retired Staff Members</h2>
+                    </div>
+                    
+                    <div class="staff-grid">
+                        <!-- Hydra - EmeraldTornado12 -->
+                        <div class="staff-card">
+                            <div class="staff-header">
+                                <div class="staff-avatar">
+                                    <img src="hydra-profile.png" alt="Hydra - EmeraldTornado12" loading="lazy">
+                                </div>
+                                <div class="staff-info">
+                                    <h3 class="staff-name">Hydra - EmeraldTornado12</h3>
+                                    <p class="staff-role">Head Moderator</p>
+                                    <p class="staff-since">Staff Since: Apr 2023</p>
+                                </div>
+                            </div>
+                            <div class="staff-content">
+                                <p class="staff-bio">Leads our moderation team to ensure server rules are followed and players have a positive experience. Expert in conflict resolution and maintaining a friendly community atmosphere.</p>
+                                
+                                <div class="staff-details">
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Timezone:</div>
+                                        <div>EST (UTC-5)</div>
+                                    </div>
+                                    <div class="staff-detail">
+                                        <div class="staff-detail-label">Languages:</div>
+                                        <div>English</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="staff-badges">
+                                    <span class="staff-badge">Retired Staff</span>
+                                </div>
+                                
+                                <div class="staff-socials">
+                                    <a href="#" class="staff-social" aria-label="Discord">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="staff-social" aria-label="Twitter">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1a10.66 10.66 0 0 1-9-4.53s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="apply-section">
+                <div class="apply-card">
+                    <div class="apply-content">
+                        <h2 class="apply-title">Join Our Staff Team</h2>
+                        <p class="apply-description">We're always looking for dedicated and passionate players to join our staff team. If you love RavenMC and want to help make it an even better place for everyone, consider applying for a staff position!</p>
+                        
+                        <div class="apply-requirements">
+                            <h3>Requirements</h3>
+                            <ul>
+                                <li>At least 16 years of age</li>
+                                <li>Active player for at least 1 month</li>
+                                <li>No previous rule violations</li>
+                                <li>Mature and respectful attitude</li>
+                                <li>Ability to communicate clearly in English</li>
+                                <li>Willingness to volunteer at least 5 hours per week</li>
+                                <li>Discord account for staff communication</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="staff-application.html" class="apply-btn">APPLY NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div style="width: 60px; height: 60px;">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" fill="#4a0080" stroke="#9c4dcc" stroke-width="2" />
+                            <path d="M30 40C30 35 35 25 50 25C65 25 70 35 70 40C70 50 60 55 50 55C40 55 30 50 30 40Z" fill="#9c4dcc" />
+                            <circle cx="40" cy="35" r="5" fill="#121212" />
+                            <circle cx="60" cy="35" r="5" fill="#121212" />
+                            <path d="M40 65C45 75 55 75 60 65" stroke="#9c4dcc" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <h3 style="margin: 15px 0;">RavenMC</h3>
+                    <p>The ultimate Minecraft experience with unique raven-themed leveling system. Join our community and embark on an epic adventure!</p>
+                    <div class="social-links">
+                        <a href="https://discord.gg/XNmwKutUeJ" target="_blank" aria-label="Discord">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.317 4.37c-1.53-.702-3.17-1.219-4.885-1.515a.075.075 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.566 18.566 0 0 0-5.487 0 12.846 12.846 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.528 19.528 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 0 0-7.86 3v1a10.66 10.66 0 0 1-9-4.53s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.247-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.218-1.79.465-2.428.247-.67.642-1.276 1.153-1.772a4.91 4.91 0 0 1 1.772-1.153c.637-.247 1.363-.415 2.428-.465C8.944 2.013 9.283 2 12 2z" fill="white"/>
+                                <path d="M12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-10.22a6.22 6.22 0 1 0 0 12.44 6.22 6.22 0 0 0 0-12.44zm7.77-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="server-info.html">Server Info</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="leveling.html">Leveling System</a></li>
+                        <li><a href="rules.html">Rules</a></li>
+                        <li><a href="staff.html">Staff</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul>
+                        <li><a href="knowledge-base.html">Knowledge Base</a></li>
+                        <li><a href="player-guides.html">Player Guides</a></li>
+                        <li><a href="raven-skills.html">Raven Skills</a></li>
+                        <li><a href="server-map.html">Server Map</a></li>
+                        <li><a href="discord-bot.html">Discord Bot</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="bug-reports.html">Bug Reports</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="staff-application.html">Apply for Staff</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 RavenMC. All rights reserved. Not affiliated with Mojang AB.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="discord-integration.js"></script>
+    <script src="server-status.js"></script>
+</body>
+</html>
